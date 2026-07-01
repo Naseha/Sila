@@ -28,5 +28,5 @@ jobs:
           hf auth login --token ${{ secrets.HF_TOKEN }}
 
       - name: Deploy to Hugging Face Space
-	run: |
-            hf-cli spaces:deploy . --space Naseha/sila-workspace
+        run: |
+          hf-cli spaces:deploy . --space Naseha/sila-workspace
