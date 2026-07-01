@@ -29,4 +29,9 @@ jobs:
 
       - name: Deploy to Hugging Face Space
         run: |
-          hf spaces:deploy . --space Naseha/sila-workspace
+          python -c "from huggingface_hub import HfApi; HfApi().create_or_update_space_repo('Naseha/sila-workspace');"
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git add .
+          git commit -m "Deploy to Hugging Face Space"
+          git push https://hf_token:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Naseha/sila-workspace
