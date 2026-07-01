@@ -29,8 +29,7 @@ jobs:
 
       - name: Deploy to Hugging Face Space
         run: |
-          python -c "from huggingface_hub import HfApi; api = HfApi(); api.create_repo(repo_id='Naseha/sila-workspace', repo_type='space', private=False, exist_ok=True);"
+          python -c "from huggingface_hub import HfApi; api = HfApi(); api.create_repo(repo_id='Naseha/sila-workspace', repo_type='space', space_sdk='docker', private=False, exist_ok=True);"
           git config --global user.email "naseha.s@gmail.com"
           git config --global user.name "Naseha"
           git remote set-url origin https://hf_token:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Naseha/sila-workspace
-          git push --force
