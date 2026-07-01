@@ -1,6 +1,7 @@
 "NousResearch/Hermes-3-Llama-3.1-8B","displayName":"Hermes 3","baseURL":"https://router.huggingface.co/featherless-ai/v1","model":"NousResearch/Hermes-3-Llama-3.1-8B"},
 
-"Sao10K/L3-8B-Stheno-v3.2""baseURL":"https://router.huggingface.co/featherless-ai/v1","model":"cognitivecomputations/dolphin-2.9-llama3-8b"
+"model":"cognitivecomputations/dolphin-2.9-llama3-8b""baseURL":"https://router.huggingface.co/featherless-ai/v1","model":"cognitivecomputations/dolphin-2.9-llama3-8b"
+
 "Sao10K/L3-8B-Stheno-v3.2","displayName":"Stheno v3.2","description":"Creative roleplay model","preprompt":"You are Sila, a warm, intelligent and deeply personal AI assistant for a couple. Be thoughtful, caring, and attentive in your responses.","endpoints":[{"type":"openai","baseURL":"https://router.huggingface.co/featherless-ai/v1","model":"Sao10K/L3-8B-Stheno-v3.2"
 
 
