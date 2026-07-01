@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.8
 
@@ -22,9 +22,11 @@ jobs:
         run: |
           pip install huggingface_hub
 
-      - name: Deploy to Hugging Face Space
+      - name: Login to Hugging Face
         run: |
-          huggingface-cli login --token ${{ secrets.HF_TOKEN }}
-          huggingface spaces:deploy . --space Naseha/sila-workspace
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          echo "HF_TOKEN=${{ secrets.HF_TOKEN }}" > .env
+          hf auth login --token ${{ secrets.HF_TOKEN }}
+
+      - name: Deploy to Hugging Face Space
+	run: |
+            hf-cli spaces:deploy . --space Naseha/sila-workspace
