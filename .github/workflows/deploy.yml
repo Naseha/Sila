@@ -25,8 +25,8 @@ jobs:
       - name: Login to Hugging Face
         run: |
           echo "HF_TOKEN=${{ secrets.HF_TOKEN }}" > .env
-          hf auth login --token ${{ secrets.HF_TOKEN }}
+          hf auth login --token ${{ secrets.HF_TOKEN }} --add-to-git-credential
 
       - name: Deploy to Hugging Face Space
         run: |
-          hf-cli spaces:deploy . --space Naseha/sila-workspace
+          hf spaces:deploy . --space Naseha/sila-workspace
