@@ -1,0 +1,4 @@
+# Local environment files must never be committed
+.env
+.env.local
+.env.*.local
